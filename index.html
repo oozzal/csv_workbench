@@ -8,5 +8,40 @@
     We are using node.js <script>document.write(process.version)</script>
     and atom-shell <script>document.write(process.versions['atom-shell'])</script>.
   </body>
+
+  <script>
+    var fs = require('fs');
+    var shell = require('shelljs');
+    var csv = require('fast-csv');
+ //   var sqlite3 = require('sqlite3').verbose();
+
+    var folders = shell.ls();
+    //var db = new sqlite3.Database('student.sqlite3');
+
+    document.write("<h2>Folders in the current directory</h2>");
+    for(i in folders) {
+      document.write(folders[i] + "<br>");
+    }
+/**
+    db && db.serialize(function() {
+      db.each("SELECT * from student", function(err, row) {
+        document.write(row.roll + ", " + row.fname + ", " + row.lname + "<br>");
+      });
+    });
+
+    db && db.close();
+**/
+document.write("<hr>");
+
+//    fs.createReadStream('test.csv')
+//    .pipe(csv())
+//    .on('data', function(data) {
+//        document.write(data);
+//    });
+//
+//    fast_csv && fast_csv.fromPath('test.csv').on('data', function(row) {
+//      document.write(row);
+//    });
+  </script>
 </html>
 
